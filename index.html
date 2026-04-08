@@ -239,36 +239,59 @@
 
     .screenshot-label {
       position: absolute;
-      right: 12px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(14,176,164,0.92);
-      color: #fff;
-      padding: 5px 14px 5px 8px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
+    }
+
+    .screenshot-label-text {
       font-family: 'DM Sans', sans-serif;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--nova-accent);
+      background: var(--nova-card-bg);
+      border: 1px solid rgba(14,176,164,0.3);
+      padding: 8px 14px;
+      border-radius: 8px;
       white-space: nowrap;
     }
 
-    .screenshot-label-1 { top: 8%; }
-    .screenshot-label-2 { top: 74%; }
-
-    .screenshot-badge {
-      width: 22px;
-      height: 22px;
-      background: #fff;
-      color: var(--nova-accent);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
+    .screenshot-label-line {
+      width: 28px;
+      height: 2px;
+      background: var(--nova-accent);
       flex-shrink: 0;
+      position: relative;
+    }
+
+    .screenshot-label-line::after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: -4px;
+      width: 0;
+      height: 0;
+      border-left: 7px solid var(--nova-accent);
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+    }
+
+    .screenshot-label-1 { top: 10%; right: calc(100% - 16px); }
+    .screenshot-label-2 { top: 76%; right: calc(100% - 16px); }
+
+    @media (max-width: 700px) {
+      .screenshot-label {
+        right: auto !important;
+        left: 8px;
+      }
+      .screenshot-label-line { display: none; }
+      .screenshot-label-text {
+        background: rgba(14,176,164,0.92);
+        color: #fff;
+        border-color: transparent;
+        font-size: 0.75rem;
+        padding: 5px 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
     }
 
     /* Share ideas */
@@ -736,10 +759,12 @@
     <div class="screenshot-wrap">
       <img src="nominate.png" alt="Nova nomination page showing both ways to refer">
       <div class="screenshot-label screenshot-label-1">
-        <span class="screenshot-badge">1</span> Fill in the form
+        <span class="screenshot-label-text">Fill in the form</span>
+        <span class="screenshot-label-line"></span>
       </div>
       <div class="screenshot-label screenshot-label-2">
-        <span class="screenshot-badge">2</span> Share your link
+        <span class="screenshot-label-text">Share your link</span>
+        <span class="screenshot-label-line"></span>
       </div>
     </div>
 
@@ -759,6 +784,10 @@
               <strong>LinkedIn DM</strong>
               <span>Reach out to a colleague or connection</span>
             </li>
+            <li>
+              <strong>Instagram message</strong>
+              <span>Send it to someone you follow or who follows you</span>
+            </li>
           </ul>
         </div>
         <div class="share-group">
@@ -771,10 +800,6 @@
             <li>
               <strong>LinkedIn Featured</strong>
               <span>Pin it to your profile so visitors see it</span>
-            </li>
-            <li>
-              <strong>LinkedIn or Instagram bio</strong>
-              <span>"Nova member &mdash; nominate someone"</span>
             </li>
             <li>
               <strong>Personal website</strong>
@@ -796,10 +821,6 @@
             <li>
               <strong>Social media</strong>
               <span>Post it on any platform you use</span>
-            </li>
-            <li>
-              <strong>QR code</strong>
-              <span>Save it on your phone to share in person</span>
             </li>
           </ul>
         </div>
@@ -883,7 +904,7 @@
       </div>
     </div>
     <div class="pricing-note">
-      Prices vary by country &mdash; members in some regions get <strong>up to 70% off</strong> automatically at checkout.
+      Prices vary by country &mdash; members in some regions get <strong>up to 70% off</strong> on the Lifetime membership.
     </div>
 
     <!-- Need help with cost -->
