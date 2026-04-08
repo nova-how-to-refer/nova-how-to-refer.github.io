@@ -90,10 +90,16 @@
       color: var(--nova-text-secondary);
       font-size: 1rem;
       line-height: 1.6;
-      margin-bottom: 48px;
+      margin-bottom: 24px;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    /* Top CTA */
+    .top-cta {
+      text-align: center;
+      margin-bottom: 48px;
     }
 
     /* Section titles */
@@ -168,7 +174,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
-      margin-bottom: 56px;
+      margin-bottom: 24px;
     }
 
     @media (max-width: 600px) { .ways-grid { grid-template-columns: 1fr; } }
@@ -215,6 +221,106 @@
       color: var(--nova-text-secondary);
       font-size: 0.85rem;
       line-height: 1.5;
+    }
+
+    /* Screenshot with annotations */
+    .screenshot-wrap {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto 56px;
+    }
+
+    .screenshot-wrap img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--nova-border);
+      display: block;
+    }
+
+    .screenshot-label {
+      position: absolute;
+      right: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(14,176,164,0.92);
+      color: #fff;
+      padding: 5px 14px 5px 8px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      white-space: nowrap;
+    }
+
+    .screenshot-label-1 { top: 8%; }
+    .screenshot-label-2 { top: 74%; }
+
+    .screenshot-badge {
+      width: 22px;
+      height: 22px;
+      background: #fff;
+      color: var(--nova-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Share ideas */
+    .share-section {
+      margin-bottom: 56px;
+    }
+
+    .share-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) { .share-grid { grid-template-columns: 1fr; } }
+
+    .share-group {
+      padding: 24px;
+      background: var(--nova-card-bg);
+      border: 1px solid var(--nova-border);
+      border-radius: var(--radius);
+    }
+
+    .share-group h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--nova-accent);
+    }
+
+    .share-group ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .share-group li {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: var(--nova-text-primary);
+    }
+
+    .share-group li strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .share-group li span {
+      color: var(--nova-text-secondary);
+      font-size: 0.8rem;
     }
 
     /* Points table */
@@ -374,6 +480,142 @@
       font-weight: 600;
     }
 
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 600px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+    .pricing-card {
+      padding: 28px 24px;
+      background: var(--nova-card-bg);
+      border: 1px solid var(--nova-border);
+      border-radius: var(--radius);
+      text-align: center;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .pricing-card:hover {
+      border-color: rgba(14,176,164,0.25);
+      transform: translateY(-2px);
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(14,176,164,0.3);
+      background: linear-gradient(135deg, var(--nova-card-bg) 0%, rgba(14,176,164,0.06) 100%);
+    }
+
+    .pricing-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--nova-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .pricing-amount {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--nova-text-primary);
+      margin-bottom: 4px;
+    }
+
+    .pricing-period {
+      color: var(--nova-text-secondary);
+      font-size: 0.85rem;
+      margin-bottom: 0;
+    }
+
+    .pricing-note {
+      text-align: center;
+      color: var(--nova-text-secondary);
+      font-size: 0.85rem;
+      margin-bottom: 56px;
+      padding: 12px 20px;
+      background: rgba(14,176,164,0.05);
+      border-radius: var(--radius);
+      line-height: 1.5;
+    }
+
+    .pricing-note strong {
+      color: var(--nova-accent);
+    }
+
+    /* Help cards */
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    @media (max-width: 600px) { .help-grid { grid-template-columns: 1fr; } }
+
+    .help-card {
+      padding: 28px 24px;
+      background: var(--nova-card-bg);
+      border: 1px solid var(--nova-border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .help-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .help-card p {
+      color: var(--nova-text-secondary);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .help-card .help-badge {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--nova-accent);
+      background: rgba(14,176,164,0.12);
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    .help-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--nova-accent);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .help-link:hover {
+      opacity: 0.8;
+    }
+
+    .help-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
     /* CTA */
     .cta-section {
       text-align: center;
@@ -415,6 +657,11 @@
       box-shadow: 0 8px 24px rgba(14,176,164,0.3);
     }
 
+    .cta-btn-sm {
+      padding: 12px 32px;
+      font-size: 0.95rem;
+    }
+
     /* Divider */
     .divider {
       height: 1px;
@@ -432,6 +679,11 @@
 
     <h1>Help shape Nova. <span>Refer someone.</span></h1>
     <p class="subtitle">You know your network best. If there's someone who'd genuinely benefit from being part of Nova, nominate them. Every great community grows through trusted connections.</p>
+
+    <!-- Top CTA -->
+    <div class="top-cta">
+      <a href="https://app.novatalent.com/nominate" target="_blank" rel="noopener" class="cta-btn cta-btn-sm">Nominate now</a>
+    </div>
 
     <!-- How it works -->
     <h2 class="section-title">How it works</h2>
@@ -477,6 +729,80 @@
         </div>
         <h3>Share your link</h3>
         <p>Copy your personal nomination link and share it with the person you want to invite. They fill in their own details.</p>
+      </div>
+    </div>
+
+    <!-- Screenshot with annotations -->
+    <div class="screenshot-wrap">
+      <img src="nominate.png" alt="Nova nomination page showing both ways to refer">
+      <div class="screenshot-label screenshot-label-1">
+        <span class="screenshot-badge">1</span> Fill in the form
+      </div>
+      <div class="screenshot-label screenshot-label-2">
+        <span class="screenshot-badge">2</span> Share your link
+      </div>
+    </div>
+
+    <!-- Where to share your link -->
+    <h2 class="section-title">Where to share your link</h2>
+    <p class="section-subtitle">Your nomination link is personal and permanent. Here are some ideas to make the most of it.</p>
+    <div class="share-section">
+      <div class="share-grid">
+        <div class="share-group">
+          <h3>Send it directly</h3>
+          <ul>
+            <li>
+              <strong>WhatsApp message</strong>
+              <span>Text a friend you think would be a great fit</span>
+            </li>
+            <li>
+              <strong>LinkedIn DM</strong>
+              <span>Reach out to a colleague or connection</span>
+            </li>
+          </ul>
+        </div>
+        <div class="share-group">
+          <h3>Make it always visible</h3>
+          <ul>
+            <li>
+              <strong>Email signature</strong>
+              <span>Every email you send becomes a touchpoint</span>
+            </li>
+            <li>
+              <strong>LinkedIn Featured</strong>
+              <span>Pin it to your profile so visitors see it</span>
+            </li>
+            <li>
+              <strong>LinkedIn or Instagram bio</strong>
+              <span>"Nova member &mdash; nominate someone"</span>
+            </li>
+            <li>
+              <strong>Personal website</strong>
+              <span>Add it to your about page or links section</span>
+            </li>
+          </ul>
+        </div>
+        <div class="share-group">
+          <h3>Reach many at once</h3>
+          <ul>
+            <li>
+              <strong>WhatsApp groups</strong>
+              <span>Alumni, MBA, company or friends groups</span>
+            </li>
+            <li>
+              <strong>LinkedIn post</strong>
+              <span>Share your Nova experience and invite others</span>
+            </li>
+            <li>
+              <strong>Social media</strong>
+              <span>Post it on any platform you use</span>
+            </li>
+            <li>
+              <strong>QR code</strong>
+              <span>Save it on your phone to share in person</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -536,6 +862,51 @@
         <span class="reward-emoji" role="img" aria-label="gift">&#x1F381;</span>
         <h3>Exclusive perks</h3>
         <p>Partner discounts and special offers</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Membership -->
+    <h2 class="section-title">Membership plans</h2>
+    <p class="section-subtitle">When your nominee is accepted, they'll choose a plan to join. Here's what's available so you can let them know.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-label">Annual</div>
+        <div class="pricing-amount">&euro;199</div>
+        <p class="pricing-period">per year</p>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-label">Lifetime</div>
+        <div class="pricing-amount">&euro;499</div>
+        <p class="pricing-period">one-time payment</p>
+      </div>
+    </div>
+    <div class="pricing-note">
+      Prices vary by country &mdash; members in some regions get <strong>up to 70% off</strong> automatically at checkout.
+    </div>
+
+    <!-- Need help with cost -->
+    <h2 class="section-title">Need help with the cost?</h2>
+    <p class="section-subtitle">Nova wants to be accessible. If your nominee's situation makes the price a barrier, there are options.</p>
+    <div class="help-grid">
+      <div class="help-card">
+        <h3>Equal Opportunities Program</h3>
+        <div class="help-badge">Up to 50% off</div>
+        <p>Scholarships for students, unemployed members or those in developing countries. Nova is merit-based &mdash; financial difficulties shouldn't prevent talented people from joining.</p>
+        <a href="https://novatalent.typeform.com/to/GDoNfDm0?typeform-source=www.novatalent.com" target="_blank" rel="noopener" class="help-link">
+          Apply now
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </div>
+      <div class="help-card">
+        <h3>Company Sponsorship</h3>
+        <div class="help-badge">Covered by employer</div>
+        <p>Many companies cover professional development memberships. We've put together a step-by-step guide to help your nominee expense their Nova membership through their employer.</p>
+        <a href="https://www.novatalent.com/blog/how-to-expense-the-nova-membership" target="_blank" rel="noopener" class="help-link">
+          Read the guide
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
       </div>
     </div>
 
